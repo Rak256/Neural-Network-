@@ -9,7 +9,8 @@ Documentation of me building a Neural Network from scratch. Below you can find s
 
 The only independent variables in a neural network are the weights and biases associated with each layer. As such, the gradient vector of the cost function should only consist of these variables:
 
-<img width="616" height="67" alt="image" src="https://github.com/user-attachments/assets/16816428-6722-48fc-86d3-6c4e4161c0df" />
+<img width="674" height="467" alt="image" src="https://github.com/user-attachments/assets/fc2e5231-6f42-44b0-99c0-25b80d5c672f" />
+
 (Source: Linked Medium Article)
 
 ### The Derivative of a Matrix
