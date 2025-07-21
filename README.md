@@ -22,6 +22,10 @@ The derivative of a scalar function with respect to a matrix creates a matrix of
 The total differential f in this case is essentially the total change in the function output when an infinitesimal change occurs in each entry of the origninal matrix D.
 
 ### Calculating Gradient Vector Components
+I will derive the 
 
 The neural network that I use for practice and the one that is used in the linked medium article has the following chain rule tree:
+
 <img width="792" height="742" alt="image" src="https://github.com/user-attachments/assets/8a4b273f-f6d9-4c0d-8663-c758e0535471" />
+
+C
