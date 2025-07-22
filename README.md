@@ -52,7 +52,13 @@ Notice that all terms where k ≠ j cancel out when taking the partial derivativ
 
 Or in matrix form:
 
-where ⊘ is the element wise division (Hadamard division):
+where ⊘ is the element wise division (Hadamard division) operator:
 
 <img width="1099" height="210" alt="image" src="https://github.com/user-attachments/assets/dc58eebe-f103-4826-bdfb-62d1d3230788" />
+
+#### ∂A/∂Z
+
+Since A is achieved through element-wise operations on Z, we can get ∂A/∂Z by taking the partial derivative of aᵢⱼ with respect to zᵢⱼ where i and j are arbritrary indexes. Note that the intuition behind this is that only the i-jth element of Z affects the i-jth element of A. 
+
+<img width="850" height="242" alt="image" src="https://github.com/user-attachments/assets/b50de74a-0a4f-4b54-93d5-b7648882fa81" />
 
