@@ -27,10 +27,17 @@ For upcoming calculations, it is better to understand this transformation throug
 The total differential f in this case is essentially the total change in the function output when an infinitesimal change occurs in each entry of the origninal matrix D.
 
 ### Calculating Gradient Vector Components
-I will derive the 
+In this section, I will derive the the partial derivative of cost with respect to A (the activated output data), Z (the raw output data), W (the weight matrix), and b (the bias matrix) for arbritrary layers in the neural network.
 
-The neural network that I use for practice and the one that is used in the linked medium article has the following chain rule tree:
+The neural network that I use for practice and the one that is used in the linked medium article has the following chain rule tree for its cost function:
 
 <img width="792" height="742" alt="image" src="https://github.com/user-attachments/assets/8a4b273f-f6d9-4c0d-8663-c758e0535471" />
+
+Note that C is the cost function, A3 is equivavlent to y_hat, and A0 is the raw input training data.
+
+#### ∂C/∂A 
+
+The first partial derivative that must be computed is ∂C/∂A. This should result in an n^[l] x m matrix (where n^[l] is the number of nodes in a layer and m is the number of training samples) where each i-jth entry is  ∂C/∂aᵢⱼ. Therefore, one can find this partial derivative by finding the arbritrary ∂C/∂aᵢⱼ. The cost function is:
+<img width="1180" height="208" alt="image" src="https://github.com/user-attachments/assets/dcb57872-ffbe-41d0-a4ee-9610de566abf" />
 
 
