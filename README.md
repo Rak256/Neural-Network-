@@ -37,7 +37,14 @@ Note that C is the cost function, A3 is equivavlent to y_hat, and A0 is the raw 
 
 #### ∂C/∂A 
 
-The first partial derivative that must be computed is ∂C/∂A. This should result in an n^[l] x m matrix (where n^[l] is the number of nodes in a layer and m is the number of training samples) where each i-jth entry is  ∂C/∂aᵢⱼ. Therefore, one can find this partial derivative by finding the arbritrary ∂C/∂aᵢⱼ. The cost function is:
-<img width="1180" height="208" alt="image" src="https://github.com/user-attachments/assets/dcb57872-ffbe-41d0-a4ee-9610de566abf" />
+The first partial derivative that must be computed is ∂C/∂A at the output layer. Let's call this layer capital L and the output A^[L]. This should result in an n^[l] x m matrix (where n^[l] is the number of nodes in layer l and m is the number of training samples) where each i-jth entry is  ∂C/∂aᵢⱼ. Therefore, one can find this partial derivative matrix by finding the arbritrary ∂C/∂aᵢⱼ. This neural network only has one output node so there is only 1 row in the output matrix. Therefore, the derivative can be shortened to ∂C/∂aⱼ The cost function is:
 
+<img width="1339" height="212" alt="image" src="https://github.com/user-attachments/assets/d12aa61b-9094-4984-a2ec-87583bf90c9a" />
 
+taking the derivative ∂C/∂aⱼ in the L layer: 
+
+<img width="1208" height="366" alt="image" src="https://github.com/user-attachments/assets/9bf980df-4ea4-46e0-9aab-9fdc9d0902df" />
+
+Notice that all terms where k ≠ j cancel out when taking the partial derivative with respect to aⱼ. Therefore:
+
+<img width="1446" height="446" alt="image" src="https://github.com/user-attachments/assets/a991a315-8cd6-41b0-b812-1beb95e752c5" />
