@@ -61,4 +61,6 @@ where ⊘ is the element wise division (Hadamard division) operator:
 Since A is achieved through element-wise operations on Z, we can get ∂A/∂Z by taking the partial derivative of aᵢⱼ with respect to zᵢⱼ where i and j are arbritrary indexes. Note that the intuition behind this is that only the i-jth element of Z affects the i-jth element of A. 
 
 <img width="850" height="242" alt="image" src="https://github.com/user-attachments/assets/b50de74a-0a4f-4b54-93d5-b7648882fa81" />
+<img width="675" height="698" alt="image" src="https://github.com/user-attachments/assets/05ee9f41-6447-45cd-9e33-8ef894794ccd" />
+
 
