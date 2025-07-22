@@ -6,7 +6,8 @@ Documentation of me building a Neural Network from scratch. Below you can find s
 ### Medium article - https://medium.com/@waadlingaadil/learn-to-build-a-neural-network-from-scratch-yes-really-cac4ca457efc, 
 ### Stack Exchange thread on the derivative of matrix multiplication -https://math.stackexchange.com/questions/1866757/not-understanding-derivative-of-a-matrix-matrix-product
 ### Stack Exchange thread on derivatives based on matrices - https://math.stackexchange.com/questions/622195/taking-a-derivative-with-respect-to-a-matrix
-### Matrix Calculus Article - https://en.wikipedia.org/wiki/Matrix_calculus)
+### Matrix Calculus Article - https://en.wikipedia.org/wiki/Matrix_calculus
+### Element wise matrix division - https://math.stackexchange.com/questions/172248/notation-for-element-wise-division-of-vectors)
 
 ## Backwards Prop Cost Gradient Calculation 
 The only independent variables in a neural network are the weights and biases associated with each layer. As such, the gradient vector of the cost function should only consist of these variables:
@@ -48,3 +49,10 @@ taking the derivative ∂C/∂aⱼ in the L layer:
 Notice that all terms where k ≠ j cancel out when taking the partial derivative with respect to aⱼ. Therefore:
 
 <img width="1446" height="446" alt="image" src="https://github.com/user-attachments/assets/a991a315-8cd6-41b0-b812-1beb95e752c5" />
+
+Or in matrix form:
+
+where ⊘ is the element wise division (Hadamard division):
+
+<img width="1099" height="210" alt="image" src="https://github.com/user-attachments/assets/dc58eebe-f103-4826-bdfb-62d1d3230788" />
+
