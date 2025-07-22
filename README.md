@@ -63,5 +63,14 @@ Since A is achieved through element-wise operations on Z, we can get ∂A/∂Z b
 <img width="955" height="294" alt="image" src="https://github.com/user-attachments/assets/8998c828-22a2-4c5c-b3b0-7b7ab49fa1f0" />
 <img width="809" height="756" alt="image" src="https://github.com/user-attachments/assets/b19d3d04-3410-40f1-bee5-56f0d9940f5d" />
 
+Note the L superscript was omitted in the second last line of the equation to not be confused with the ^2 term.
+This can also be written in matrix form: 
 
+<img width="749" height="210" alt="image" src="https://github.com/user-attachments/assets/7f44ff62-14b0-443e-a26a-5b44e47727fc" />
+
+Note that the ○ symbol denotes element-wise multiplication (Hadamard multiplication).
+#### ∂C/∂Z
+Through chain rule, we get:
+<img width="1186" height="313" alt="image" src="https://github.com/user-attachments/assets/60b14804-8bc4-4497-9711-770a5f03cbd7" />
+<img width="1099" height="663" alt="image" src="https://github.com/user-attachments/assets/7cc519d2-282d-41db-b3e2-73ccbcc239f6" />
 
