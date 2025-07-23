@@ -85,8 +85,11 @@ We know that for some layer l:
 
 <img width="1086" height="521" alt="image" src="https://github.com/user-attachments/assets/89804e11-de18-4497-b865-95437c5229e7" />
 
+where i,j,p, and q are arbritrary indexes.
+
 The biggest question I had during my research was "How do I take the derivative of matrix multiplication?". This is where the total differential of the cost function is very useful.
 
 <img width="1146" height="679" alt="image" src="https://github.com/user-attachments/assets/59441b30-8fe7-495a-8ae0-001878932223" />
 
+Changing any entry in the weight matrix does affect the bias matrix. Therefore, it's derivative with respect to some pq entry in the weight matrix is always 0. Furthermore, notice that whenever i ≠ p the partial derivative is zero. Therefore, the summation over the rows of Z collapses. Lastly, when k ≠ q, ∂(Wᵢₖ Aₖⱼ)/∂Wₚq is 0. Therefore we get 
  
