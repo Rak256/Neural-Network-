@@ -96,3 +96,6 @@ Changing any entry in the weight matrix does affect the bias matrix. Therefore, 
 
 <img width="1187" height="592" alt="image" src="https://github.com/user-attachments/assets/e445f586-48cc-4a7c-94f5-9f652b5d6eac" />
 
+Notice that the q-jth entry of the A^l matrix is the same as the j-qth entry of A^l transposed matrix (recall that a transpose is just the flipping of the row and column coordinates of a matrix). So:
+
+<img width="1012" height="330" alt="image" src="https://github.com/user-attachments/assets/e4d95214-ffce-43ff-96d1-76ba01125dcf" />
