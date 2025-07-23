@@ -1,5 +1,9 @@
 # Neural-Network-
-Documentation of me building a Neural Network from scratch. Below you can find some useful theory that I researched from multiple sources that add context to some steps in my practice neural network.
+Documentation of me building a Neural Network from scratch.
+
+This neural network is a binary classification network. I cover all steps of creating this network (Forward Propagation, Cost function, Back Propagation) in my code through comments or through this README file for calculations that are larger and more complex.
+
+Below you can find some useful theory that I researched from multiple sources that add context to some steps in my practice neural network.
 
 # Calculations that were too long to be code comments.
 ### (Sources: 
@@ -25,7 +29,7 @@ For upcoming calculations, it is better to understand this transformation throug
 
 <img width="1226" height="366" alt="image" src="https://github.com/user-attachments/assets/c8e1e259-ef44-44f6-9e37-0b7a831439ab" />
 
-The total differential f in this case is essentially the total change in the function output when an infinitesimal change occurs in each entry of the origninal matrix D.
+The total differential ∂f in this case is essentially the total change in the function output when an infinitesimal change occurs in each entry of the origninal matrix D. This is why we sum over the rows and columns of D.
 
 ### Calculating Gradient Vector Components
 In this section, I will derive the the partial derivative of cost with respect to A (the activated output data), Z (the raw output data), W (the weight matrix), and b (the bias matrix) for arbritrary layers in the neural network.
