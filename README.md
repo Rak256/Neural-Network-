@@ -94,4 +94,5 @@ The biggest question I had during my research was "How do I take the derivative 
 
 Changing any entry in the weight matrix does affect the bias matrix. Therefore, it's derivative with respect to some pq entry in the weight matrix is always 0. Furthermore, notice that whenever i ≠ p the partial derivative is zero. Therefore, the summation over the rows of Z collapses. Lastly, when k ≠ q, ∂(Wᵢₖ Aₖⱼ)/∂Wₚq is 0. Therefore we get 
 
-<img width="1186" height="291" alt="image" src="https://github.com/user-attachments/assets/cf2b4cfc-2d56-4b92-a282-d14fe45d2d9a" />
+<img width="1187" height="592" alt="image" src="https://github.com/user-attachments/assets/e445f586-48cc-4a7c-94f5-9f652b5d6eac" />
+
