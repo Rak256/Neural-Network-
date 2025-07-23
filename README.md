@@ -83,9 +83,9 @@ Through chain rule, we get:
 #### ∂Z/∂W
 We know that for some layer l:
 
-<img width="1086" height="521" alt="image" src="https://github.com/user-attachments/assets/89804e11-de18-4497-b865-95437c5229e7" />
+<img width="856" height="362" alt="image" src="https://github.com/user-attachments/assets/448a5512-573f-4bb7-88ab-d780024c2f18" />
 
-where i,j,p, and q are arbritrary indexes.
+where i,j,p, and q are arbritrary indexes. Asssume that the column size and and row size of matrices W and A are r respectively.
 
 The biggest question I had during my research was "How do I take the derivative of matrix multiplication?". This is where the total differential of the cost function is very useful.
 
@@ -93,3 +93,4 @@ The biggest question I had during my research was "How do I take the derivative 
 
 Changing any entry in the weight matrix does affect the bias matrix. Therefore, it's derivative with respect to some pq entry in the weight matrix is always 0. Furthermore, notice that whenever i ≠ p the partial derivative is zero. Therefore, the summation over the rows of Z collapses. Lastly, when k ≠ q, ∂(Wᵢₖ Aₖⱼ)/∂Wₚq is 0. Therefore we get 
  
+<img width="1147" height="725" alt="image" src="https://github.com/user-attachments/assets/102a2fc4-8e63-4a52-ae1c-d410e3abe434" />
