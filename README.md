@@ -5,6 +5,10 @@ This neural network is a binary classification network. I cover all steps of cre
 
 Below you can find some useful theory that I researched from multiple sources that add context to some steps in my practice neural network.
 
+# Prerequisites
+- Linear Algebra 1
+- Calculus 2
+
 # Calculations that were too long to be code comments.
 ### (Sources: 
 ### Medium article - https://medium.com/@waadlingaadil/learn-to-build-a-neural-network-from-scratch-yes-really-cac4ca457efc, 
@@ -42,7 +46,7 @@ The neural network that I use for practice and the one that is used in the linke
 
 Note that C is the cost function, A3 is equivavlent to y_hat, and A0 is the raw input training data.
 
-#### ∂C/∂A 
+### ∂C/∂A 
 
 The first partial derivative that must be computed is ∂C/∂A at the output layer. Let's call this layer capital L and the output A^[L]. This should result in an n^[l] x m matrix (where n^[l] is the number of nodes in layer l and m is the number of training samples) where each i-jth entry is  ∂C/∂aᵢⱼ. Therefore, one can find this partial derivative matrix by finding the arbritrary ∂C/∂aᵢⱼ. This neural network only has one output node so there is only 1 row in the output matrix. Therefore, the derivative can be shortened to ∂C/∂aⱼ The cost function is:
 
@@ -62,7 +66,7 @@ where ⊘ is the element wise division (Hadamard division) operator:
 
 <img width="1099" height="210" alt="image" src="https://github.com/user-attachments/assets/dc58eebe-f103-4826-bdfb-62d1d3230788" />
 
-#### ∂A/∂Z
+### ∂A/∂Z
 
 Since A is achieved through element-wise operations on Z, we can get ∂A/∂Z by taking the partial derivative of aᵢⱼ with respect to zᵢⱼ where i and j are arbritrary indexes. Note that the intuition behind this is that only the i-jth element of Z affects the i-jth element of A. The following are the calculations for the top layer, L: 
 
@@ -75,12 +79,13 @@ This can also be written in matrix form:
 <img width="749" height="210" alt="image" src="https://github.com/user-attachments/assets/7f44ff62-14b0-443e-a26a-5b44e47727fc" />
 
 Note that the ○ symbol denotes element-wise multiplication (Hadamard multiplication).
-#### ∂C/∂Z
+
+### ∂C/∂Z
 Through chain rule, we get:
 <img width="1186" height="313" alt="image" src="https://github.com/user-attachments/assets/60b14804-8bc4-4497-9711-770a5f03cbd7" />
 <img width="1015" height="713" alt="image" src="https://github.com/user-attachments/assets/c2c77e74-9d4d-4497-a90a-c684bdd95a7b" />
 
-#### ∂Z/∂W
+### ∂C/∂W
 We know that for some layer l:
 
 <img width="848" height="402" alt="image" src="https://github.com/user-attachments/assets/4029358b-020e-4393-9f4c-da0e3d1735a5" />
@@ -100,6 +105,9 @@ Notice that the q-jth entry of the A^l matrix is the same as the j-qth entry of 
 
 <img width="1012" height="330" alt="image" src="https://github.com/user-attachments/assets/e4d95214-ffce-43ff-96d1-76ba01125dcf" />
 
-This, in fact, is the exact form of matrix multiplication for a specific row and column of 2 matrices! since p and q are arbritrary indexes, we can then put this equation into matrix form giving us: 
+This, in fact, is the vector dot product for a specific row and column of 2 matrices! Since p and q are arbritrary indexes, this equation can be represented through matrix multiplication. We can then put this equation into matrix form giving: 
 
 <img width="1023" height="369" alt="image" src="https://github.com/user-attachments/assets/98ffcba2-88bc-4c94-8b91-ddd8a1a1f069" />
+
+### ∂C/∂A
+Calculating this derivative is very similar to calculating ∂Z/∂W for some layer l, and so I think it would be a good excercise. Just follow all the steps used in the ∂C/∂W and use the commutativity of multiplication to represent the p-qth entry of the RHS matrix 
