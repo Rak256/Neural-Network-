@@ -87,5 +87,6 @@ We know that for some layer l:
 
 The biggest question I had during my research was "How do I take the derivative of matrix multiplication?". This is where the total differential of the cost function is very useful.
 
-<img width="886" height="498" alt="image" src="https://github.com/user-attachments/assets/f808ca50-3bb4-4e4d-8535-ac21621f1560" />
+<img width="1146" height="679" alt="image" src="https://github.com/user-attachments/assets/59441b30-8fe7-495a-8ae0-001878932223" />
+
  
