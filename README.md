@@ -99,3 +99,7 @@ Changing any entry in the weight matrix does affect the bias matrix. Therefore, 
 Notice that the q-jth entry of the A^l matrix is the same as the j-qth entry of A^l transposed matrix (recall that a transpose is just the flipping of the row and column coordinates of a matrix). So:
 
 <img width="1012" height="330" alt="image" src="https://github.com/user-attachments/assets/e4d95214-ffce-43ff-96d1-76ba01125dcf" />
+
+This, in fact, is the exact form of matrix multiplication for a specific row and column of 2 matrices! since p and q are arbritrary indexes, we can then put this equation into matrix form giving us: 
+
+<img width="1023" height="369" alt="image" src="https://github.com/user-attachments/assets/98ffcba2-88bc-4c94-8b91-ddd8a1a1f069" />
