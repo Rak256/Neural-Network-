@@ -13,6 +13,8 @@ Below you can find some useful theory that I researched from multiple sources th
 ### Matrix Calculus Article - https://en.wikipedia.org/wiki/Matrix_calculus
 ### Element wise matrix division - https://math.stackexchange.com/questions/172248/notation-for-element-wise-division-of-vectors)
 
+NOTE: Matrix multiplication between some matrices A and B is represented in this documentation as AB.
+
 ## Backwards Prop Cost Gradient Calculation 
 The only independent variables in a neural network are the weights and biases associated with each layer. As such, the gradient vector of the cost function should only consist of these variables:
 
@@ -76,5 +78,14 @@ Note that the ○ symbol denotes element-wise multiplication (Hadamard multiplic
 #### ∂C/∂Z
 Through chain rule, we get:
 <img width="1186" height="313" alt="image" src="https://github.com/user-attachments/assets/60b14804-8bc4-4497-9711-770a5f03cbd7" />
-<img width="1099" height="663" alt="image" src="https://github.com/user-attachments/assets/7cc519d2-282d-41db-b3e2-73ccbcc239f6" />
+<img width="1015" height="713" alt="image" src="https://github.com/user-attachments/assets/c2c77e74-9d4d-4497-a90a-c684bdd95a7b" />
 
+#### ∂Z/∂W
+We know that for some layer l:
+
+<img width="1086" height="521" alt="image" src="https://github.com/user-attachments/assets/89804e11-de18-4497-b865-95437c5229e7" />
+
+The biggest question I had during my research was "How do I take the derivative of matrix multiplication?". This is where the total differential of the cost function is very useful.
+
+<img width="886" height="498" alt="image" src="https://github.com/user-attachments/assets/f808ca50-3bb4-4e4d-8535-ac21621f1560" />
+ 
