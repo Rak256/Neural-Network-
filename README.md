@@ -88,7 +88,7 @@ Through chain rule, we get:
 ### ∂C/∂W
 We know that for some layer l:
 
-<img width="486" height="222" alt="image" src="https://github.com/user-attachments/assets/1594bf52-bd5a-416d-b443-2c869683ae82" />
+<img width="979" height="450" alt="image" src="https://github.com/user-attachments/assets/cdb0e867-3fd9-46c1-866f-83c01ba33531" />
 
 where i,j,p, and q are arbritrary indexes. Asssume that the column size and and row size of matrices W and A are r respectively.
 
