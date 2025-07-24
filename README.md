@@ -24,12 +24,16 @@ The only independent variables in a neural network are the weights and biases as
 
 <img width="674" height="467" alt="image" src="https://github.com/user-attachments/assets/fc2e5231-6f42-44b0-99c0-25b80d5c672f" />
 
+*Notation*
+- L: The hidden layer closest to the output layer.
+- W^[L - k] : For some whole number k, W^[L- k] is the weight matrix at layer W^[L- k].
+- b^[L - k] : For some whole number k, b^[L- k] is the weight matrix at layer b^[L- k].
+
 ### The Derivative of a Scalar With Respect To a Matrix
 
 The derivative of a scalar function with respect to a matrix creates a matrix of the same dimensions, where each i-jth element of that new matrix is the partial derivative of the function with respect to the i-jth entry of the original matrix. For some scalar function f(A) where A is a matrix with arbritrary elements aᵢⱼ, this is illustrated below:
 
 <img width="919" height="408" alt="image" src="https://github.com/user-attachments/assets/4ba0a21c-faf0-496e-91f0-780f051f93e5" />
-
 
 For upcoming calculations, it is better to understand this transformation through the total differential of the scalar function. If f(D) is a scalar function where D is a matrix, then:
 
