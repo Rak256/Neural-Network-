@@ -68,7 +68,7 @@ where ⊘ is the element wise division (Hadamard division) operator:
 
 ### ∂A/∂Z
 
-Since A is achieved through element-wise operations on Z, we can get ∂A/∂Z by taking the partial derivative of aᵢⱼ with respect to zᵢⱼ where i and j are arbritrary indexes. Note that the intuition behind this is that only the i-jth element of Z affects the i-jth element of A. The following are the calculations for the top layer, L: 
+Since A is achieved through element-wise operations on Z, we can get ∂A/∂Z by taking the partial derivative of aᵢⱼ with respect to Zᵢⱼ where i and j are arbritrary indexes. Note that the intuition behind this is that only the i-jth element of Z affects the i-jth element of A. The following are the calculations for the top layer, L: 
 
 <img width="955" height="294" alt="image" src="https://github.com/user-attachments/assets/8998c828-22a2-4c5c-b3b0-7b7ab49fa1f0" />
 <img width="809" height="756" alt="image" src="https://github.com/user-attachments/assets/b19d3d04-3410-40f1-bee5-56f0d9940f5d" />
@@ -90,7 +90,7 @@ We know that for some layer l:
 
 <img width="979" height="450" alt="image" src="https://github.com/user-attachments/assets/cdb0e867-3fd9-46c1-866f-83c01ba33531" />
 
-where i,j,p, and q are arbritrary indexes. Asssume that the column size and and row size of matrices W and A are r respectively.
+where i and j are arbritrary indexes. Asssume that the column size and and row size of matrices W and A are r respectively. You might be wondering why we only reperesent the ith row of the bias matrix in the i-j element form of the above equation. This is because while b is an n^[l] x m matrix, it only consists of the first column broadcasted (copied over) to create m columns. This means any changes made in the first column will be duplicated in the columns j > 1. So, Zᵢⱼ only depends on bᵢ of the first and original column.  
 
 The biggest question I had during my research was "How do I take the derivative of matrix multiplication?". This is where the total differential of the cost function is very useful.
  
