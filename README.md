@@ -90,7 +90,7 @@ We know that for some layer l:
 
 <img width="979" height="450" alt="image" src="https://github.com/user-attachments/assets/cdb0e867-3fd9-46c1-866f-83c01ba33531" />
 
-where i and j are arbritrary indexes. Asssume that the column size and and row size of matrices W and A are r respectively. You might be wondering why we only reperesent the ith row of the bias matrix in the i-j element form of the above equation. This is because while b is an n^[l] x m matrix, it only consists of the first column broadcasted (copied over) to create m columns. This means any changes made in the first column will be duplicated in the columns j > 1. So, Zᵢⱼ only depends on bᵢ of the first and original column.  
+where i and j are arbritrary indexes. Asssume that the column size and and row size of matrices W and A are r respectively. You might be wondering why we use bᵢ instead of bᵢⱼ for the bias matrix element in the i-j element form of the above equation. This is because while b is an n^[l] x m matrix, it only consists of the first column vector broadcasted (copied over) to create m columns. This makes sense since each layer should only have 1 bias vector with n^[l] components (1 for each node). This also means that any changes made in the first column will be duplicated in the columns j > 1. So, Zᵢⱼ only depends on bᵢ of the first and original column.  
 
 The biggest question I had during my research was "How do I take the derivative of matrix multiplication?". This is where the total differential of the cost function is very useful.
  
