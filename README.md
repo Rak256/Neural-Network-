@@ -114,3 +114,12 @@ Note that this calculation is for an arbritrary layer l, and so I have left ∂C
 Calculating this derivative is very similar to calculating ∂Z/∂W for some layer l, and so I think it would be a good excercise. Just follow all the steps used in the ∂C/∂W derivation, use the commutativity of multiplication, and matrix transposition to represent the p-qth entry of the resulting matrix.
 
 ### ∂C/∂b  
+Similarly to ∂C/∂W, we can use the total differential to find ∂C/∂b:
+
+<img width="1114" height="536" alt="image" src="https://github.com/user-attachments/assets/00a9a5db-2260-4cfe-87e8-f4f95d641bcb" />
+
+Again, notice that when i ≠ p, that term in the summation is 0 because ∂Zᵢⱼ/∂bₚ is 0. Changing any entry p in the original bias vector at layer l will not affect the weight matrix at layer l since the weight matrix is also an independent variable. It also won't affect the activation matrix of layer l - 1 since it acts as an independent variable at each layer l. Therefore we have:
+
+<img width="771" height="474" alt="image" src="https://github.com/user-attachments/assets/d58cd831-e461-4762-a35e-a7589c9d2758" />
+
+It is possible to write this equation in matrix form. However, I believe the notation is a bit confusing and so I have omitted it in this documentation. This equation is all that is needed to derive the derivative of the bias matrix in code.
