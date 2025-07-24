@@ -122,4 +122,16 @@ Again, notice that when i ≠ p, that term in the summation is 0 because ∂Zᵢ
 
 <img width="771" height="474" alt="image" src="https://github.com/user-attachments/assets/d58cd831-e461-4762-a35e-a7589c9d2758" />
 
-It is possible to write this equation in matrix form. However, I believe the notation is a bit confusing and so I have omitted it in this documentation. This equation is all that is needed to derive the derivative of the bias matrix in code.
+It is possible to write this equation in matrix form. However, I believe the notation is a bit confusing and so I have omitted it in this documentation. This equation is all that is needed to code the derivative of cost with respect to the bias matrix at some layer l.
+
+### The Intuition Behind Back Propagation of the Cost Gradient
+A question that you may have when going through these calculations is how we can find the partial derivative of cost with respect to the weight matrices and bias matrices at deeper levels. Using the definition of the total differential and the chain rule tree provided in the above sections, we would get:
+
+<img width="1067" height="241" alt="image" src="https://github.com/user-attachments/assets/a883431e-9f12-4298-a5e2-490cae103f3e" />
+
+Now this looks VERY confusing and if the equation is viewed as a whole it is indeed complex. However, focus on the annotation in the equation. The first 2 terms in the equation are something that we have already solved for individually, followed by another partial derivative that we have also solved for individually. This is the intuition behind backwards propagation. Instead of viewing the above equation all at once, we must break the equation down into layers, starting from the hidden layer that is closest to the output layer. Since we are using arbritrary indexes for every matrix in the equation, the techniques with the total differential of cost still apply. 
+
+As you may have deduced, backward propagation is an iterative process and so it is fairly simple to implement in code. Calculate the partial derivative at individual layers as discussed above and store it in a variable (the convention is to store it as d[*name of component matrix*]. Eg. dZ would represent ∂C/∂Z). Then, calculate further gradient components and multiply this value by the stored variable. Store this value in another variable, and so on until you reach the hidden layer closest to the input layer.
+
+# Conclusion
+If you are not me from the future, I hope this README file was of help in understanding neural networks. I want this project to be a 1 stop resource to learning about neural networks so that others would not have to spend as much time as I did to understand neural networks. For more details about anything I discussed here, you can check out the sources that I have listed at the top of the file. Thank you for reading.
