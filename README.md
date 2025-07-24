@@ -48,6 +48,10 @@ The neural network that I use for practice and the one that is used in the linke
 
 <img width="792" height="742" alt="image" src="https://github.com/user-attachments/assets/8a4b273f-f6d9-4c0d-8663-c758e0535471" />
 
+*Notation*
+- C : Cost function
+- 
+
 Note that C is the cost function, A3 is equivavlent to y_hat, and A0 is the raw input training data.
 
 ### ∂C/∂A 
