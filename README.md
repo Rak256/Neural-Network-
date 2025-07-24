@@ -94,7 +94,7 @@ where i and j are arbritrary indexes. Asssume that the column size and and row s
 
 The biggest question I had during my research was "How do I take the derivative of matrix multiplication?". This is where the total differential of the cost function is very useful.
  
-<img width="1179" height="705" alt="image" src="https://github.com/user-attachments/assets/e0d38938-d8d2-46f6-b531-1ea8263c40f5" />
+<img width="1201" height="703" alt="image" src="https://github.com/user-attachments/assets/e86d586b-c020-4002-bc97-33333329849b" />
 
 Changing any entry in the weight matrix does affect the bias matrix. Therefore, it's derivative with respect to some pq entry in the weight matrix is always 0. Furthermore, notice that whenever i ≠ p the partial derivative is zero. Therefore, the summation over the rows of Z collapses. Lastly, when k ≠ q, ∂(Wᵢₖ Aₖⱼ)/∂Wₚq is 0. Therefore we get 
 
