@@ -45,7 +45,7 @@ The total differential ∂f in this case is essentially the total change in the 
 ### Calculating Gradient Vector Components
 In this section, I will derive the the partial derivative of cost with respect to A (the activated output data), Z (the raw output data at some layer l), W (the weight matrix at some layer l), and b (the bias matrix at some layer l).
 
-A note on the notation that will be used from this point onwards, superscripts indicate the layer that a component in. For example, Wˡ is the weight matrix at layer l. Subcripts indicate a particular element of a matrix. For example, Wᵢⱼ represnts the i-jth element (ith row and jth column element) of the weight matrix W.
+A note on the notation that will be used from this point onwards - superscripts indicate the layer that a component in. For example, Wˡ is the weight matrix at layer l. Subcripts indicate a particular element of a matrix. For example, Wᵢⱼ represnts the i-jth element (ith row and jth column element) of the weight matrix W.
 
 The neural network that I use for practice and the one that is used in the linked medium article has the following chain rule tree for its cost function:
 
