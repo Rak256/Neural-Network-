@@ -32,7 +32,7 @@ The only independent variables in a neural network are the weights and biases as
 
 ### The Derivative of a Scalar With Respect To a Matrix
 
-The derivative of a scalar function with respect to a matrix creates a matrix of the same dimensions, where each i-jth element of that new matrix is the partial derivative of the function with respect to the i-jth entry of the original matrix. For some scalar function f(A) where A is a matrix with arbritrary elements aᵢⱼ, this is illustrated below:
+The derivative of a scalar function with respect to a matrix creates a matrix of the same dimensions, where each i-jth element of that new matrix is the partial derivative of the function with respect to the i-jth element of the original matrix. For some scalar function f(A) where A is a matrix with arbritrary elements aᵢⱼ, this is illustrated below:
 
 <img width="919" height="408" alt="image" src="https://github.com/user-attachments/assets/4ba0a21c-faf0-496e-91f0-780f051f93e5" />
 
@@ -40,7 +40,7 @@ For upcoming calculations, it is better to understand this transformation throug
 
 <img width="1226" height="366" alt="image" src="https://github.com/user-attachments/assets/c8e1e259-ef44-44f6-9e37-0b7a831439ab" />
 
-The total differential ∂f in this case is essentially the total change in the function output when an infinitesimal change occurs in each entry of the origninal matrix D. This is why we sum over the rows and columns of D, to sum up all the infinitesimal change in each Dᵢⱼ element.
+The total differential ∂f in this case is essentially the total change in the function output when an infinitesimal change occurs in each element of the origninal matrix D. This is why we sum over the rows and columns of D, to sum up all the infinitesimal change in each Dᵢⱼ element.
 
 ### Calculating Gradient Vector Components
 In this section, I will derive the the partial derivative of cost with respect to A (the activated output data), Z (the raw output data at some layer l), W (the weight matrix at some layer l), and b (the bias matrix at some layer l).
@@ -64,7 +64,7 @@ Note that A3 is equivavlent to y_hat, and A⁰ is the raw input training data.
 
 ### ∂C/∂A 
 
-The first partial derivative that must be computed is ∂C/∂A at the output layer. Let's call the hidden layer closest to the output layer capital L and the output A^[L]. This should result in an n^[L] x m matrix (where n^[L] is the number of nodes in layer L and m is the number of training samples) where each i-jth entry is  ∂C/∂Aᵢⱼ. Therefore, one can find this partial derivative matrix by finding the arbritrary ∂C/∂Aᵢⱼ. This neural network only has one output node so there is only 1 row in the output matrix. Therefore, the derivative can be shortened to ∂C/∂aⱼ The cost function is:
+The first partial derivative that must be computed is ∂C/∂A at the output layer. Let's call the hidden layer closest to the output layer capital L and the output A^[L]. This should result in an n^[L] x m matrix (where n^[L] is the number of nodes in layer L and m is the number of training samples) where each i-jth element is  ∂C/∂Aᵢⱼ. Therefore, one can find this partial derivative matrix by finding the arbritrary ∂C/∂Aᵢⱼ. This neural network only has one output node so there is only 1 row in the output matrix. Therefore, the derivative can be shortened to ∂C/∂aⱼ The cost function is:
 
 <img width="1339" height="212" alt="image" src="https://github.com/user-attachments/assets/d12aa61b-9094-4984-a2ec-87583bf90c9a" />
 
@@ -115,11 +115,11 @@ The biggest question I had during my research was "How do I take the derivative 
  
 <img width="1201" height="703" alt="image" src="https://github.com/user-attachments/assets/e86d586b-c020-4002-bc97-33333329849b" />
 
-Changing any entry in the weight matrix does affect the bias matrix. Therefore, it's derivative with respect to some pq entry in the weight matrix is always 0. Furthermore, notice that whenever i ≠ p the partial derivative is zero. Therefore, the summation over the rows of Z collapses. Lastly, when k ≠ q, ∂(Wᵢₖ Aₖⱼ)/∂Wₚq is 0. Therefore we get 
+Changing any element in the weight matrix does affect the bias matrix. Therefore, it's derivative with respect to some pq element in the weight matrix is always 0. Furthermore, notice that whenever i ≠ p the partial derivative is zero. Therefore, the summation over the rows of Z collapses. Lastly, when k ≠ q, ∂(Wᵢₖ Aₖⱼ)/∂Wₚq is 0. Therefore we get 
 
 <img width="1187" height="592" alt="image" src="https://github.com/user-attachments/assets/e445f586-48cc-4a7c-94f5-9f652b5d6eac" />
 
-Notice that the q-jth entry of the A^l matrix is the same as the j-qth entry of A^l transposed matrix (recall that a transpose is just the flipping of the row and column coordinates of a matrix). So:
+Notice that the q-jth element of the Aˡ matrix is the same as the j-qth element of Aˡ transposed matrix (recall that a transpose is just the flipping of the row and column coordinates of a matrix). So:
 
 <img width="1012" height="330" alt="image" src="https://github.com/user-attachments/assets/e4d95214-ffce-43ff-96d1-76ba01125dcf" />
 
@@ -130,14 +130,14 @@ This, in fact, is the vector dot product for a specific row and column of 2 matr
 Note that this calculation is for an arbritrary layer l, and so I have left ∂C/∂Z as a variable since l is not necessarily the top layer.
 
 ### ∂C/∂A
-Calculating this derivative is very similar to calculating ∂Z/∂W for some layer l, and so I think it would be a good excercise. Just follow all the steps used in the ∂C/∂W derivation, use the commutativity of multiplication, and matrix transposition to represent the p-qth entry of the resulting matrix.
+Calculating this derivative is very similar to calculating ∂Z/∂W for some layer l, and so I think it would be a good excercise. Just follow all the steps used in the ∂C/∂W derivation, use the commutativity of multiplication, and matrix transposition to represent the p-qth element of the resulting matrix.
 
 ### ∂C/∂b  
 Similarly to ∂C/∂W, we can use the total differential to find ∂C/∂b:
 
 <img width="1114" height="536" alt="image" src="https://github.com/user-attachments/assets/00a9a5db-2260-4cfe-87e8-f4f95d641bcb" />
 
-Again, notice that when i ≠ p, that term in the summation is 0 because ∂Zᵢⱼ/∂bₚ is 0. Changing any entry p in the original bias vector at layer l will not affect the weight matrix at layer l since the weight matrix is also an independent variable. It also won't affect the activation matrix of layer l - 1 since it acts as an independent variable at each layer l. Therefore we have:
+Again, notice that when i ≠ p, that term in the summation is 0 because ∂Zᵢⱼ/∂bₚ is 0. Changing any element p in the original bias vector at layer l will not affect the weight matrix at layer l since the weight matrix is also an independent variable. It also won't affect the activation matrix of layer l - 1 since it acts as an independent variable at each layer l. Therefore we have:
 
 <img width="771" height="474" alt="image" src="https://github.com/user-attachments/assets/d58cd831-e461-4762-a35e-a7589c9d2758" />
 
