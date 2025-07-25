@@ -127,9 +127,9 @@ This, in fact, is the vector dot product for a specific row and column of 2 matr
 
 <img width="1023" height="369" alt="image" src="https://github.com/user-attachments/assets/98ffcba2-88bc-4c94-8b91-ddd8a1a1f069" />
 
-Note that this calculation is for an arbritrary layer l, and so I have left ∂C/∂Z as a variable since l is not necessarily the top layer.
+Note that this calculation is for an arbritrary layer l, and so I have left ∂C/∂Z as a variable since l is not necessarily the hidden layer closest to the output layer.
 
-### ∂C/∂A
+### ∂C/∂A for inner layers (Eg. L-1)
 Calculating this derivative is very similar to calculating ∂Z/∂W for some layer l, and so I think it would be a good excercise. Just follow all the steps used in the ∂C/∂W derivation, use the commutativity of multiplication, and matrix transposition to represent the p-qth element of the resulting matrix.
 
 ### ∂C/∂b  
