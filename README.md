@@ -10,6 +10,21 @@ Below you can find some useful theory that I researched from multiple sources th
 - Calculus 2
 - Neural Networks - Forward propagation (you can look through the code I write to understand this)
 
+# Brief intro
+This section gives a brief intro into some math and neural network concepts that may give context to some steps in the Backward Propagation section.
+
+A note on the notation that will be used from this point onwards - Superscripts indicate the layer that a component is in. For example, Wˡ is the weight matrix at layer l. Subcripts indicate a particular element of a matrix. For example, Wᵢⱼ represnts the i-jth element (ith row and jth column element) of the weight matrix W.
+
+
+## Hadamard Multiplication and Division Operations
+For some m x n matrices A and B with arbritrary elements aᵢⱼ and bᵢⱼ respectively, the hadamard multiplication between A and B is:
+
+<img width="1252" height="443" alt="image" src="https://github.com/user-attachments/assets/238086b3-d007-41ab-a22b-6ab291c98b74" />
+
+and hadamard division between A and B is:
+
+<img width="1283" height="634" alt="image" src="https://github.com/user-attachments/assets/87f3e229-5764-4a7e-8863-658ebbf14f58" />
+
 # Calculations that were too long to be code comments.
 ### (Sources: 
 ### Medium article - https://medium.com/@waadlingaadil/learn-to-build-a-neural-network-from-scratch-yes-really-cac4ca457efc, 
@@ -44,8 +59,6 @@ The total differential ∂f in this case is essentially the total change in the 
 
 ### Calculating Gradient Vector Components
 In this section, I will derive the the partial derivative of cost with respect to A (the activated output data), Z (the raw output data at some layer l), W (the weight matrix at some layer l), and b (the bias matrix at some layer l).
-
-A note on the notation that will be used from this point onwards - Superscripts indicate the layer that a component is in. For example, Wˡ is the weight matrix at layer l. Subcripts indicate a particular element of a matrix. For example, Wᵢⱼ represnts the i-jth element (ith row and jth column element) of the weight matrix W.
 
 The neural network that I use for practice and the one that is used in the linked medium article has the following chain rule tree for its cost function:
 
