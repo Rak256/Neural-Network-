@@ -115,7 +115,7 @@ The biggest question I had during my research was "How do I take the derivative 
  
 <img width="1201" height="703" alt="image" src="https://github.com/user-attachments/assets/e86d586b-c020-4002-bc97-33333329849b" />
 
-Changing any element in the weight matrix does affect the bias matrix. Therefore, it's derivative with respect to some pq element in the weight matrix is always 0. Furthermore, notice that whenever i ≠ p the partial derivative is zero. This is becuase changing Wₚq does not change any Wᵢₖ unless i = p and q = k. In other words, changing a p-qth element in the weight matrix can only create change in elements in the output matrix Z that depend on it. Therefore, the summation over the rows of Z collapses. Lastly, when k ≠ q, ∂(Wᵢₖ Aₖⱼ)/∂Wₚq is 0. Therefore we get 
+Changing any element in the weight matrix does affect the bias matrix. Therefore, it's derivative with respect to some pq element in the weight matrix is always 0. Furthermore, notice that whenever i ≠ p the partial derivative is zero. This is becuase changing Wₚq does not change any Wᵢₖ unless i = p and q = k. In other words, changing a p-qth element in the weight matrix can only create change in elements in the output matrix Z if those elements depend on the p-qth weight matrix element. Therefore, the summation over the rows of Z collapses. Lastly, when k ≠ q, ∂(Wᵢₖ Aₖⱼ)/∂Wₚq is 0. Therefore we get 
 
 <img width="1187" height="592" alt="image" src="https://github.com/user-attachments/assets/e445f586-48cc-4a7c-94f5-9f652b5d6eac" />
 
