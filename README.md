@@ -89,9 +89,8 @@ where ⊘ is the element wise division (Hadamard division) operator:
 Since A is achieved through element-wise operations on Z, we can get ∂A/∂Z by taking the partial derivative of aᵢⱼ with respect to Zᵢⱼ where i and j are arbritrary indices. Note that the intuition behind this is that only the i-jth element of Z affects the i-jth element of A. The following are the calculations for the hidden layer closest to the output layer, called L: 
 
 <img width="955" height="294" alt="image" src="https://github.com/user-attachments/assets/8998c828-22a2-4c5c-b3b0-7b7ab49fa1f0" />
-<img width="809" height="756" alt="image" src="https://github.com/user-attachments/assets/b19d3d04-3410-40f1-bee5-56f0d9940f5d" />
+<img width="799" height="767" alt="image" src="https://github.com/user-attachments/assets/e563f711-b62f-4060-bc1f-11e9ec6b4569" />
 
-Note the L superscript was omitted in the second last line of the equation to not be confused with the ^2 term.
 This can also be written in matrix form: 
 
 <img width="749" height="210" alt="image" src="https://github.com/user-attachments/assets/7f44ff62-14b0-443e-a26a-5b44e47727fc" />
