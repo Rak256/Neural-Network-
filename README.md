@@ -68,6 +68,8 @@ The first partial derivative that must be computed is ∂C/∂A at the output la
 
 <img width="1339" height="212" alt="image" src="https://github.com/user-attachments/assets/d12aa61b-9094-4984-a2ec-87583bf90c9a" />
 
+Where yₖ is the kth element of the 1 x m labeled output matrix, Y. Notice that Y is the same shape as  A^[L]. This is what allows us to write the partial derivative ∂C/∂A in matrix form since this shape condition is necessary for Hadamard multiplication and division.
+
 taking the derivative ∂C/∂aⱼ in the L layer: 
 
 <img width="1208" height="366" alt="image" src="https://github.com/user-attachments/assets/9bf980df-4ea4-46e0-9aab-9fdc9d0902df" />
