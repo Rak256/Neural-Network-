@@ -98,6 +98,8 @@ This can also be written in matrix form:
 Note that the ○ symbol denotes element-wise multiplication (Hadamard multiplication).
 
 ### ∂C/∂Z
+Since A is achieved through element wise operations on Z, we perform Hadamard multiplication in the chain rule.
+
 Through chain rule, we get:
 <img width="1186" height="313" alt="image" src="https://github.com/user-attachments/assets/60b14804-8bc4-4497-9711-770a5f03cbd7" />
 <img width="1015" height="713" alt="image" src="https://github.com/user-attachments/assets/c2c77e74-9d4d-4497-a90a-c684bdd95a7b" />
