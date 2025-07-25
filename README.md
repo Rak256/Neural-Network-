@@ -148,7 +148,7 @@ Again, notice that when i ≠ p, that term in the summation is 0 because ∂Zᵢ
 It is possible to write this equation in matrix form. However, I believe the notation is a bit confusing and so I have omitted it in this documentation. This equation is all that is needed to code the derivative of cost with respect to the bias matrix at some layer l.
 
 ### The Intuition Behind Back Propagation of the Cost Gradient
-A question that you may have when going through these calculations is how we can find the partial derivative of cost with respect to the weight matrices and bias matrices at deeper levels. Using the definition of the total differential and the chain rule tree provided in the above sections, we would get:
+A question that you may have when going through these calculations is how we can find the partial derivative of cost with respect to the weight matrices and bias matrices at deeper levels. Using the definition of the total differential and the chain rule tree provided in the above sections to find ∂C/∂W^[l-1], we would get:
 
 <img width="1067" height="241" alt="image" src="https://github.com/user-attachments/assets/a883431e-9f12-4298-a5e2-490cae103f3e" />
 
