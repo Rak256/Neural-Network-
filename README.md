@@ -132,6 +132,10 @@ Note that this calculation is for an arbritrary layer l, and so I have left ∂C
 ### ∂C/∂A for Inner Layers (Eg. L-1)
 Calculating this derivative is very similar to calculating ∂Z/∂W for some layer l, and so I think it would be a good excercise. Just follow all the steps used in the ∂C/∂W derivation, use the commutativity of multiplication, and matrix transposition to represent the p-qth element of the resulting matrix.
 
+Your answer should be:
+
+<img width="1009" height="283" alt="image" src="https://github.com/user-attachments/assets/4a5e866e-36ac-4d00-a239-e9dc9033279b" />
+
 ### ∂C/∂b  
 Similarly to ∂C/∂W, we can use the total differential to find ∂C/∂b:
 
