@@ -25,7 +25,7 @@ The only independent variables in a neural network are the weights and biases as
 <img width="674" height="467" alt="image" src="https://github.com/user-attachments/assets/fc2e5231-6f42-44b0-99c0-25b80d5c672f" />
 
 *Notation*
-- L: The hidden layer closest to the output layer.
+- L: The hidden layer closest to the output layer. L = 3 in this network.
 - W^[L - k] : For some whole number k, W^[L- k] is the weight matrix at layer W^[L- k].
 - b^[L - k] : For some whole number k, b^[L- k] is the weight matrix at layer b^[L- k].
 
@@ -42,11 +42,12 @@ For upcoming calculations, it is better to understand this transformation throug
 The total differential ∂f in this case is essentially the total change in the function output when an infinitesimal change occurs in each entry of the origninal matrix D. This is why we sum over the rows and columns of D, to sum up all the infinitesimal change in each Dᵢⱼ element.
 
 ### Calculating Gradient Vector Components
-In this section, I will derive the the partial derivative of cost with respect to A (the activated output data), Z (the raw output data), W (the weight matrix), and b (the bias matrix) for arbritrary layers in the neural network.
+In this section, I will derive the the partial derivative of cost with respect to A (the activated output data), Z (the raw output data at some layer l), W (the weight matrix at some layer l), and b (the bias matrix at some layer l).
 
 The neural network that I use for practice and the one that is used in the linked medium article has the following chain rule tree for its cost function:
 
-<img width="792" height="742" alt="image" src="https://github.com/user-attachments/assets/8a4b273f-f6d9-4c0d-8663-c758e0535471" />
+<img width="567" height="772" alt="image" src="https://github.com/user-attachments/assets/fe6092c4-0bfa-47a1-a76b-75f38742b2ab" />
+
 
 *Notation*
 - C : Cost function
