@@ -8,6 +8,7 @@ Below you can find some useful theory that I researched from multiple sources th
 # Prerequisites
 - Linear Algebra 1
 - Calculus 2
+- Neural Networks - Forward propagation (you can look through the code I write to understand this)
 
 # Calculations that were too long to be code comments.
 ### (Sources: 
@@ -44,6 +45,8 @@ The total differential ∂f in this case is essentially the total change in the 
 ### Calculating Gradient Vector Components
 In this section, I will derive the the partial derivative of cost with respect to A (the activated output data), Z (the raw output data at some layer l), W (the weight matrix at some layer l), and b (the bias matrix at some layer l).
 
+A note on the notation that will be used from this point onwards, superscripts indicate the layer that a component in. For example, Wˡ is the weight matrix at layer l. Subcripts indicate a particular element of a matrix. For example, Wᵢⱼ represnts the i-jth element (ith row and jth column element) of the weight matrix W.
+
 The neural network that I use for practice and the one that is used in the linked medium article has the following chain rule tree for its cost function:
 
 <img width="567" height="772" alt="image" src="https://github.com/user-attachments/assets/fe6092c4-0bfa-47a1-a76b-75f38742b2ab" />
@@ -51,13 +54,17 @@ The neural network that I use for practice and the one that is used in the linke
 
 *Notation*
 - C : Cost function
-- 
+- L : The hidden layer closest to the output layer. L = 3 in this network.
+- Aˡ : For some layer l, this is the activated output data of that layer.
+- Zˡ : For some layer l, this is the raw output data of that layer.
+- Wˡ : For some layer l, this is the weight matrix of that layer.
+- bˡ : For some layer l, this is the bias matrix of that layer.
 
-Note that C is the cost function, A3 is equivavlent to y_hat, and A0 is the raw input training data.
+Note that A3 is equivavlent to y_hat, and A⁰ is the raw input training data.
 
 ### ∂C/∂A 
 
-The first partial derivative that must be computed is ∂C/∂A at the output layer. Let's call this layer capital L and the output A^[L]. This should result in an n^[l] x m matrix (where n^[l] is the number of nodes in layer l and m is the number of training samples) where each i-jth entry is  ∂C/∂aᵢⱼ. Therefore, one can find this partial derivative matrix by finding the arbritrary ∂C/∂aᵢⱼ. This neural network only has one output node so there is only 1 row in the output matrix. Therefore, the derivative can be shortened to ∂C/∂aⱼ The cost function is:
+The first partial derivative that must be computed is ∂C/∂A at the output layer. Let's call the hidden layer closest to the output layer capital L and the output A^[L]. This should result in an n^[L] x m matrix (where n^[L] is the number of nodes in layer L and m is the number of training samples) where each i-jth entry is  ∂C/∂Aᵢⱼ. Therefore, one can find this partial derivative matrix by finding the arbritrary ∂C/∂Aᵢⱼ. This neural network only has one output node so there is only 1 row in the output matrix. Therefore, the derivative can be shortened to ∂C/∂aⱼ The cost function is:
 
 <img width="1339" height="212" alt="image" src="https://github.com/user-attachments/assets/d12aa61b-9094-4984-a2ec-87583bf90c9a" />
 
