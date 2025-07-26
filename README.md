@@ -65,7 +65,7 @@ The probability L of some desired output in the neural network, where y is that 
  
 Collecting the cost of these trials would result in the multiplication of m samples. To avoid this, we take the logarithm of the this probability L. Now, collecting this cost would result in the summation of m samples instead. We then average this total cost over all samples so that the magnitude doesn't scale with label size.
 
-# Calculations that were too long to be code comments.
+# Backwards Prop Cost Gradient Calculation 
 ### (Sources: 
 ### Medium article - https://medium.com/@waadlingaadil/learn-to-build-a-neural-network-from-scratch-yes-really-cac4ca457efc, 
 ### Stack Exchange thread on the derivative of matrix multiplication -https://math.stackexchange.com/questions/1866757/not-understanding-derivative-of-a-matrix-matrix-product
@@ -73,7 +73,6 @@ Collecting the cost of these trials would result in the multiplication of m samp
 ### Matrix Calculus Article - https://en.wikipedia.org/wiki/Matrix_calculus
 ### Element wise matrix division - https://math.stackexchange.com/questions/172248/notation-for-element-wise-division-of-vectors)
 
-## Backwards Prop Cost Gradient Calculation 
 The only independent variables in a neural network are the weights and biases associated with each layer. As such, the gradient vector of the cost function should only consist of these variables:
 
 <img width="674" height="467" alt="image" src="https://github.com/user-attachments/assets/fc2e5231-6f42-44b0-99c0-25b80d5c672f" />
@@ -83,7 +82,7 @@ The only independent variables in a neural network are the weights and biases as
 - W^[L - k] : For some whole number k, W^[L- k] is the weight matrix at layer W^[L- k].
 - b^[L - k] : For some whole number k, b^[L- k] is the weight matrix at layer b^[L- k].
 
-### The Derivative of a Scalar With Respect To a Matrix
+## The Derivative of a Scalar With Respect To a Matrix
 
 The derivative of a scalar function with respect to a matrix creates a matrix of the same dimensions, where each i-jth element of that new matrix is the partial derivative of the function with respect to the i-jth element of the original matrix. For some scalar function f(A) where A is a matrix with arbritrary elements aᵢⱼ, this is illustrated below:
 
@@ -95,7 +94,7 @@ For upcoming calculations, it is better to understand this transformation throug
 
 The total differential ∂f in this case is essentially the total change in the function output when an infinitesimal change occurs in each element of the origninal matrix D. This is why we sum over the rows and columns of D, to sum up all the infinitesimal change in each Dᵢⱼ element.
 
-### Calculating Gradient Vector Components
+## Calculating Gradient Vector Components
 In this section, I will derive the the partial derivative of cost with respect to A (the activated output data), Z (the raw output data at some layer l), W (the weight matrix at some layer l), and b (the bias matrix at some layer l).
 
 The neural network that I use for practice and the one that is used in the linked medium article has the following chain rule tree for its cost function:
@@ -104,16 +103,16 @@ The neural network that I use for practice and the one that is used in the linke
 
 
 *Notation*
-- C : Cost function
-- L : The hidden layer closest to the output layer. L = 3 in this network.
-- Aˡ : For some layer l, this is the activated output data of that layer.
-- Zˡ : For some layer l, this is the raw output data of that layer.
-- Wˡ : For some layer l, this is the weight matrix of that layer.
-- bˡ : For some layer l, this is the bias matrix of that layer.
+- **C** : Cost function
+- **L** : The hidden layer closest to the output layer. L = 3 in this network.
+- **Aˡ** : For some layer l, this is the activated output data of that layer.
+- **Zˡ** : For some layer l, this is the raw output data of that layer.
+- **Wˡ** : For some layer l, this is the weight matrix of that layer.
+- **bˡ** : For some layer l, this is the bias matrix of that layer.
 
 Note that A3 is equivavlent to y_hat, and A⁰ is the raw input training data.
 
-### ∂C/∂A 
+## ∂C/∂A 
 
 The first partial derivative that must be computed is ∂C/∂A at the output layer. Let's call the hidden layer closest to the output layer capital L and the output A^[L]. This should result in an n^[L] x m matrix (where n^[L] is the number of nodes in layer L and m is the number of training samples) where each i-jth element is  ∂C/∂Aᵢⱼ. Therefore, one can find this partial derivative matrix by finding the arbritrary ∂C/∂Aᵢⱼ. This neural network only has one output node so there is only 1 row in the output matrix. Therefore, the derivative can be shortened to ∂C/∂aⱼ The cost function is:
 
@@ -135,7 +134,7 @@ where ⊘ is the element wise division (Hadamard division) operator:
 
 <img width="1099" height="210" alt="image" src="https://github.com/user-attachments/assets/dc58eebe-f103-4826-bdfb-62d1d3230788" />
 
-### ∂A/∂Z
+## ∂A/∂Z
 
 Since A is achieved through element-wise operations on Z, we can get ∂A/∂Z by taking the partial derivative of aᵢⱼ with respect to Zᵢⱼ where i and j are arbritrary indices. Note that the intuition behind this is that only the i-jth element of Z affects the i-jth element of A. The following are the calculations for the hidden layer closest to the output layer, called L: 
 
@@ -148,14 +147,14 @@ This can also be written in matrix form:
 
 Note that the ○ symbol denotes element-wise multiplication (Hadamard multiplication).
 
-### ∂C/∂Z
+## ∂C/∂Z
 Since A is achieved through element wise operations on Z, we perform Hadamard multiplication in the chain rule.
 
 Through chain rule, we get:
 <img width="1186" height="313" alt="image" src="https://github.com/user-attachments/assets/60b14804-8bc4-4497-9711-770a5f03cbd7" />
 <img width="1015" height="713" alt="image" src="https://github.com/user-attachments/assets/c2c77e74-9d4d-4497-a90a-c684bdd95a7b" />
 
-### ∂C/∂W
+## ∂C/∂W
 We know that for some layer l:
 
 <img width="979" height="450" alt="image" src="https://github.com/user-attachments/assets/cdb0e867-3fd9-46c1-866f-83c01ba33531" />
@@ -180,14 +179,14 @@ This, in fact, is the vector dot product for a specific row and column of 2 matr
 
 Note that this calculation is for an arbritrary layer l, and so I have left ∂C/∂Z as a variable since l is not necessarily the hidden layer closest to the output layer.
 
-### ∂C/∂A for Inner Layers (Eg. L-1)
+## ∂C/∂A for Inner Layers (Eg. L-1)
 Calculating this derivative is very similar to calculating ∂Z/∂W for some layer l, and so I think it would be a good excercise. Just follow all the steps used in the ∂C/∂W derivation, use the commutativity of multiplication, and matrix transposition to represent the p-qth element of the resulting matrix.
 
 Your answer should be:
 
 <img width="1009" height="283" alt="image" src="https://github.com/user-attachments/assets/4a5e866e-36ac-4d00-a239-e9dc9033279b" />
 
-### ∂C/∂b  
+## ∂C/∂b  
 Similarly to ∂C/∂W, we can use the total differential to find ∂C/∂b:
 
 <img width="1114" height="536" alt="image" src="https://github.com/user-attachments/assets/00a9a5db-2260-4cfe-87e8-f4f95d641bcb" />
@@ -198,7 +197,7 @@ Again, notice that when i ≠ p, that term in the summation is 0 because ∂Zᵢ
 
 It is possible to write this equation in matrix form. However, I believe the notation is a bit confusing and so I have omitted it in this documentation. This equation is all that is needed to code the derivative of cost with respect to the bias matrix at some layer l.
 
-### The Intuition Behind Back Propagation of the Cost Gradient
+## The Intuition Behind Back Propagation of the Cost Gradient
 A question that you may have when going through these calculations is how we can find the partial derivative of cost with respect to the weight matrices and bias matrices at deeper levels. Using the definition of the total differential and the chain rule tree provided in the above sections to find ∂C/∂W^[l-1], we would get:
 
 <img width="1067" height="241" alt="image" src="https://github.com/user-attachments/assets/a883431e-9f12-4298-a5e2-490cae103f3e" />
