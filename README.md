@@ -16,7 +16,9 @@ NOTE: Matrix multiplication between some matrices A and B is represented in this
 # Brief Intro
 This section gives a brief intro into some math and neural network concepts that may give context to some steps in the Backward Propagation section.
 
-A note on the notation that will be used from this point onwards - Superscripts indicate the layer that a component is in. For example, Wˡ is the weight matrix at layer l. Subscripts indicate a particular element of a matrix. For example, Wᵢⱼ represnts the i-jth element (ith row and jth column element) of the weight matrix W.
+A note on the notation that will be used from this point onwards - 
+
+Superscripts indicate the layer that a component is in. For example, Wˡ is the weight matrix at layer l. Subscripts indicate a particular element of a matrix. For example, Wᵢⱼ represnts the i-jth element (ith row and jth column element) of the weight matrix W.
 
 
 ## Hadamard Multiplication and Division Operations
