@@ -65,7 +65,7 @@ The probability L of some desired output in the neural network, where y is that 
  
 Collecting the cost of these trials would result in the multiplication of m samples. To avoid this, we take the logarithm of the this probability L. Now, collecting this cost would result in the summation of m samples instead. We then average this total cost over all samples so that the magnitude doesn't scale with label size.
 
-# Backwards Prop Cost Gradient Calculation 
+# Backwards Propagation Cost Gradient Calculation 
 ### (Sources: 
 ### Medium article - https://medium.com/@waadlingaadil/learn-to-build-a-neural-network-from-scratch-yes-really-cac4ca457efc, 
 ### Stack Exchange thread on the derivative of matrix multiplication -https://math.stackexchange.com/questions/1866757/not-understanding-derivative-of-a-matrix-matrix-product
