@@ -57,9 +57,13 @@ Where W is the weight matrix, A is the activated output of the previous layer an
 **Cost Function** - The cost of a neural network is a measure of the difference between the AI network's output and the true label of the training data.
 
 ### (Optional) - Sidenote on this code's Neural Network Cost function
-The cost function for this particular neural network is binary cross entropy loss, also known as log loss. It's idea is based on the concept of Bernoulli trials. Essentially, if your network predicts only 2 outcomes that are independent events, for example spam mail or not spam mail, then the probabily that your mails are spam can be modelled through Bernoulli trials. 
+The cost function for this particular neural network is binary cross entropy loss, also known as log loss. It's idea is based on the concept of Bernoulli trials. Essentially, if your network predicts only 2 outcomes that are independent events, for example spam mail or not spam mail, then the probability that your mails are spam can be modelled through Bernoulli trials.
 
-Collecting the cost of these trials would result in repeated multiplication. To avoid this, we take the logarithm of the 
+The probability L of some desired output in the neural network, where y is that desired output and y_hat is the network's output, is: 
+
+<img width="765" height="180" alt="image" src="https://github.com/user-attachments/assets/26b59ae8-4bdd-4c56-9aa5-b6ec671ec095" />
+ 
+Collecting the cost of these trials would result in the multiplication of m samples. To avoid this, we take the logarithm of the this probability L. Now, collecting this cost would result in the summation of m samples instead. We then average this total cost over all samples so that the magnitude doesn't scale with label size.
 
 # Calculations that were too long to be code comments.
 ### (Sources: 
