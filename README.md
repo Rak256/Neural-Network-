@@ -78,9 +78,9 @@ The only independent variables in a neural network are the weights and biases as
 <img width="674" height="467" alt="image" src="https://github.com/user-attachments/assets/fc2e5231-6f42-44b0-99c0-25b80d5c672f" />
 
 *Notation*
-- L: The hidden layer closest to the output layer. L = 3 in this network.
-- W^[L - k] : For some whole number k, W^[L- k] is the weight matrix at layer W^[L- k].
-- b^[L - k] : For some whole number k, b^[L- k] is the weight matrix at layer b^[L- k].
+- **L**: The hidden layer closest to the output layer. L = 3 in this network.
+- **W^[L - k]** : For some whole number k, W^[L- k] is the weight matrix at layer W^[L- k].
+- **b^[L - k]** : For some whole number k, b^[L- k] is the weight matrix at layer b^[L- k].
 
 ## The Derivative of a Scalar With Respect To a Matrix
 
