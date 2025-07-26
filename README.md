@@ -9,8 +9,11 @@ Below you can find some useful theory that I researched from multiple sources th
 - Linear Algebra 1
 - Calculus 2
 - Neural Networks - Forward propagation (you can look through the code I write to understand this)
+- (Optional) Probability and Statistics
 
-# Brief intro
+NOTE: Matrix multiplication between some matrices A and B is represented in this documentation as AB.
+
+# Brief Intro
 This section gives a brief intro into some math and neural network concepts that may give context to some steps in the Backward Propagation section.
 
 A note on the notation that will be used from this point onwards - Superscripts indicate the layer that a component is in. For example, Wˡ is the weight matrix at layer l. Subcripts indicate a particular element of a matrix. For example, Wᵢⱼ represnts the i-jth element (ith row and jth column element) of the weight matrix W.
@@ -25,6 +28,39 @@ and hadamard division between A and B is:
 
 <img width="1283" height="634" alt="image" src="https://github.com/user-attachments/assets/87f3e229-5764-4a7e-8863-658ebbf14f58" />
 
+## Element Form of Matrix Multiplication
+For an m x p matrix A and a p x n matrix B, the m x n matrix Z = AB can be expressed in element form using arbritrary indices i and j, i < m, and j < n:
+
+<img width="875" height="354" alt="image" src="https://github.com/user-attachments/assets/842153f4-762c-4770-94e6-bf2e1693199b" />
+
+While this may look complicated, it simply represents the dot product between the ith row of A and the jth column of B. Hence, we scan across the columns of A and the rows of B to add up all the terms in the dot product, giving us Zᵢⱼ.
+
+## Brief Intro into Forward Propagation
+Since this README file focuses on backward propagation, I highly recommend checking out Aadil's Medium Article on neural networks to visually understand the process. However, to give more context to the backward propagation section, I will provide a brief intro of some concepts here.
+
+Training Data - Also known as features, they are the raw input used by the AI to learn and solve a problem at hand.
+
+Training Labels - Often shortened to labels, they are the true output to the raw training data.
+
+Nodes - Some function that processes data based on weights and biases and produces an output.
+
+Layers - A section of the neural netowork that contains a fixed amount of nodes. Data is processed and outputted in each layer and is passed between layers.
+
+Hidden Layers - Layers within the black box of a neural network. These layers don't hold much intuitive meaning but they transform the raw data provided at the input layer based on patterns within that data and allow the AI to interpret the input at the output layer.
+
+Forward Propagation - In forward propagation, data is passed through the input layer and into the hidden layers within the network where that data is transformed. Once transformed, that data is "activated" to produce a more interpretable output. In the neural network used in my code and this README file, I use the sigmoid function to turn the output into a probability between 0 and 1. Finally the data is passed into the output layer where it is interpreted. The output of each layer is denoted as:
+
+<img width="868" height="197" alt="image" src="https://github.com/user-attachments/assets/0ed743e9-beb3-4f18-a71f-15bca052c35b" />
+
+Where W is the weight matrix, A is the activated output of the previous layer and b is the bias matrix.  
+
+Cost Function - The cost of a neural network is a measure of the difference between the AI network's output and the true label of the training data.
+
+### (Optional) - Sidenote on this code's Neural Network Cost function
+The cost function for this particular neural network is binary cross entropy loss, also known as log loss. It's idea is based on the concept of Bernoulli trials. Essentially, if your network predicts only 2 outcomes that are independent events, for example spam mail or not spam mail, then the probabily that your mails are spam can be modelled through Bernoulli trials. 
+
+Collecting the cost of these trials would result in repeated multiplication. To avoid this, we take the logarithm of the 
+
 # Calculations that were too long to be code comments.
 ### (Sources: 
 ### Medium article - https://medium.com/@waadlingaadil/learn-to-build-a-neural-network-from-scratch-yes-really-cac4ca457efc, 
@@ -32,8 +68,6 @@ and hadamard division between A and B is:
 ### Stack Exchange thread on derivatives based on matrices - https://math.stackexchange.com/questions/622195/taking-a-derivative-with-respect-to-a-matrix
 ### Matrix Calculus Article - https://en.wikipedia.org/wiki/Matrix_calculus
 ### Element wise matrix division - https://math.stackexchange.com/questions/172248/notation-for-element-wise-division-of-vectors)
-
-NOTE: Matrix multiplication between some matrices A and B is represented in this documentation as AB.
 
 ## Backwards Prop Cost Gradient Calculation 
 The only independent variables in a neural network are the weights and biases associated with each layer. As such, the gradient vector of the cost function should only consist of these variables:
