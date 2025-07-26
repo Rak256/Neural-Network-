@@ -38,23 +38,23 @@ While this may look complicated, it simply represents the dot product between th
 ## Brief Intro into Forward Propagation
 Since this README file focuses on backward propagation, I highly recommend checking out Aadil's Medium Article on neural networks to visually understand the process. However, to give more context to the backward propagation section, I will provide a brief intro of some concepts here.
 
-Training Data - Also known as features, they are the raw input used by the AI to learn and solve a problem at hand.
+**Training Data** - Also known as features, they are the raw input used by the AI to learn and solve a problem at hand.
 
-Training Labels - Often shortened to labels, they are the true output to the raw training data.
+**Training Labels** - Often shortened to labels, they are the true output to the raw training data.
 
-Nodes - Some function that processes data based on weights and biases and produces an output.
+**Nodes** - Some function that processes data based on weights and biases and produces an output.
 
-Layers - A section of the neural netowork that contains a fixed amount of nodes. Data is processed and outputted in each layer and is passed between layers.
+**Layers** - A section of the neural netowork that contains a fixed amount of nodes. Data is processed and outputted in each layer and is passed between layers.
 
-Hidden Layers - Layers within the black box of a neural network. These layers don't hold much intuitive meaning but they transform the raw data provided at the input layer based on patterns within that data and allow the AI to interpret the input at the output layer.
+**Hidden Layers** - Layers within the black box of a neural network. These layers don't hold much intuitive meaning but they transform the raw data provided at the input layer based on patterns within that data and allow the AI to interpret the input at the output layer.
 
-Forward Propagation - In forward propagation, data is passed through the input layer and into the hidden layers within the network where that data is transformed. Once transformed, that data is "activated" to produce a more interpretable output. In the neural network used in my code and this README file, I use the sigmoid function to turn the output into a probability between 0 and 1. Finally the data is passed into the output layer where it is interpreted. The output of each layer is denoted as:
+**Forward Propagation** - In forward propagation, data is passed through the input layer and into the hidden layers within the network where that data is transformed. Once transformed, that data is "activated" to produce a more interpretable output. In the neural network used in my code and this README file, I use the sigmoid function to turn the output into a probability between 0 and 1. Finally the data is passed into the output layer where it is interpreted. The output of each layer is denoted as:
 
 <img width="868" height="197" alt="image" src="https://github.com/user-attachments/assets/0ed743e9-beb3-4f18-a71f-15bca052c35b" />
 
 Where W is the weight matrix, A is the activated output of the previous layer and b is the bias matrix.  
 
-Cost Function - The cost of a neural network is a measure of the difference between the AI network's output and the true label of the training data.
+**Cost Function** - The cost of a neural network is a measure of the difference between the AI network's output and the true label of the training data.
 
 ### (Optional) - Sidenote on this code's Neural Network Cost function
 The cost function for this particular neural network is binary cross entropy loss, also known as log loss. It's idea is based on the concept of Bernoulli trials. Essentially, if your network predicts only 2 outcomes that are independent events, for example spam mail or not spam mail, then the probabily that your mails are spam can be modelled through Bernoulli trials. 
