@@ -132,7 +132,7 @@ Or in matrix form:
 
 where ⊘ is the element wise division (Hadamard division) operator:
 
-<img width="1099" height="210" alt="image" src="https://github.com/user-attachments/assets/dc58eebe-f103-4826-bdfb-62d1d3230788" />
+<img width="1189" height="181" alt="image" src="https://github.com/user-attachments/assets/2ea0fba3-aebe-4086-9d26-5f7473e1b114" />
 
 ## ∂A/∂Z
 
