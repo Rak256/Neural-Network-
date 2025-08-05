@@ -1,7 +1,7 @@
 # Neural-Network-
 Documentation of me building a Neural Network from scratch.
 
-This neural network is a binary classification network. I cover all steps of creating this network (Forward Propagation, Cost function, Back Propagation) in my code through comments or through this README file for calculations that are larger and more complex.
+This neural network is a binary classification network that takes weight and height data to predict whether or not someone is at a risk of cardiovascular disease. I cover all steps of creating this network (Forward Propagation, Cost function, Back Propagation) in my code through comments or through this README file for calculations that are larger and more complex.
 
 Below you can find some useful theory that I researched from multiple sources that add context to some steps in my practice neural network.
 
