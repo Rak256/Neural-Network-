@@ -63,7 +63,7 @@ The probability L of some desired output in the neural network, where y is that 
 
 <img width="765" height="180" alt="image" src="https://github.com/user-attachments/assets/26b59ae8-4bdd-4c56-9aa5-b6ec671ec095" />
  
-Collecting the cost of these trials would result in the multiplication of m samples. To avoid this, we take the logarithm of the this probability L. Now, collecting this cost would result in the summation of m samples instead. We then average this total cost over all samples so that the magnitude doesn't scale with label size.
+Collecting the cost of these trials would result in the multiplication of m samples. To avoid this, we take the logarithm of the this probability L. Now, collecting this cost would result in the summation of m samples instead. We then average this total cost over all samples so that the magnitude of cost doesn't scale with label size.
 
 # Backwards Propagation Cost Gradient Calculation 
 ### (Sources: 
