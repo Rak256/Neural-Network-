@@ -33,7 +33,7 @@ For an m x p matrix A and a p x n matrix B, the m x n matrix Z = AB can be expre
 
 <img width="875" height="354" alt="image" src="https://github.com/user-attachments/assets/842153f4-762c-4770-94e6-bf2e1693199b" />
 
-While this may look complicated, it simply represents the dot product between the ith row of A and the jth column of B. Hence, we scan across the columns of A and the rows of B to add up all the terms in the dot product, giving us Zᵢⱼ.
+While this may look complicated, it simply represents the dot product between the ith row vector of A and the jth column vector of B. Hence, we scan across the columns of A and the rows of B to add up all the terms in the dot product, giving us Zᵢⱼ.
 
 ## Brief Intro into Forward Propagation
 Since this README file focuses on backward propagation, I highly recommend checking out Aadil's Medium Article on neural networks to visually understand the process. However, to give more context to the backward propagation section, I will provide a brief intro of some concepts here.
